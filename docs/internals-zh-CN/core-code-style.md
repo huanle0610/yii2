@@ -1,50 +1,49 @@
-Yii 2 Core Framework Code Style
+Yii 2 核心框架编码风格
 ===============================
 
-The following code style is used for Yii 2.x core and official extensions development. If you want to pull-request code
-into the core, consider using it. We aren't forcing you to use this code style for your application. Feel free to choose
-what suits you better.
+Yii 2.x核心代码和官方扩展开发使用下面的编码风格.如果你要pull-request编码到核心代码,请考虑使用该风格.我不强制你在自己的应用中使用该风格.
+请选择最适合自己的.
 
-You can get a config for CodeSniffer here: https://github.com/yiisoft/yii2-coding-standards
 
-## 1. Overview
+你可以在此处得到官方的CodeSniffer: https://github.com/yiisoft/yii2-coding-standards
 
-Overall we're using [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
-compatible style so everything that applies to
-[PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) is applied to our code
-style as well.
+## 1. 概览
 
-- Files MUST use either `<?php` or `<?=` tags.
-- There should be a newline at the end of file.
-- Files MUST use only UTF-8 without BOM for PHP code.
-- Code MUST use 4 spaces for indenting, not tabs.
-- Class names MUST be declared in `StudlyCaps`.
-- Class constants MUST be declared in all upper case with underscore separators.
-- Method names MUST be declared in `camelCase`.
-- Property names MUST be declared in `camelCase`.
-- Property names MUST start with an initial underscore if they are private.
-- Always use `elseif` instead of `else if`.
+总体上我们应用[PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
+兼容性风格, 应用了
+[PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) 风格的代码就对了.
 
-## 2. Files
+- 文件必须以 `<?php` 或  `<?=` 标签开头.
+- 文件最后应该要有一个空行.
+- php代码文件必须使用UTF-8且无BOM头格式.
+- 代码必须以4个空格来缩进,而不是tab.
+- 类名必须定义为`StudlyCaps`风格.
+- 类常量必须定义为全部字母大写用下划线分隔的形式.
+- 方法名必须定义为`camelCase`风格.
+- 属性名必须定义为`camelCase`风格.
+- 私有（private）属性必须以下划线开头.
+- 总是使用`elseif`而不是`else if`.
 
-### 2.1. PHP Tags
+## 2. 文件
+
+### 2.1. PHP 标签
 
 - PHP code MUST use `<?php ?>` or `<?=` tags; it MUST NOT use the other tag variations such as `<?`.
 - In case file contains PHP only it should not have trailing `?>`.
 - Do not add trailing spaces to the end of the lines.
 - Any file that contains PHP code should end with the extension `.php`.
 
-### 2.2. Character Encoding
+### 2.2. 字符编码
 
 PHP code MUST use only UTF-8 without BOM.
 
-## 3. Class Names
+## 3. 类名
 
 Class names MUST be declared in `StudlyCaps`. For example, `Controller`, `Model`.
 
-## 4. Classes
+## 4. 类
 
-The term "class" refers to all classes and interfaces here.
+"class" 这个术语指的是所有的类和接口.
 
 - Classes should be named using `CamelCase`.
 - The brace should always be written on the line underneath the class name.
@@ -64,7 +63,7 @@ class MyClass extends \yii\base\BaseObject implements MyInterface
 }
 ```
 
-### 4.1. Constants
+### 4.1. 常量
 
 Class constants MUST be declared in all upper case with underscore separators.
 For example:
@@ -113,7 +112,7 @@ class Foo
 }
 ```
 
-### 4.3. Methods
+### 4.3. 方法
 
 - Functions and methods should be named using `camelCase` with first letter lowercase.
 - Name should be descriptive by itself indicating the purpose of the function.
@@ -138,7 +137,7 @@ class Foo
 }
 ```
 
-### 4.4 PHPDoc blocks
+### 4.4 PHPDoc 块
 
  - `@param`, `@var`, `@property` and `@return` must declare types as `bool`, `int`, `string`, `array` or `null`.
    You can use a class names as well such as `Model` or `ActiveRecord`.
@@ -183,9 +182,9 @@ public function save(Transaction $transaction, $argument2 = 100)
 }
 ```
 
-### 5.2 Strings
+### 5.2 字符串
 
-- If string doesn't contain variables or single quotes, use single quotes.
+- 字符串中不包含变量和单引号时就使用单引号.
 
 ```php
 $str = 'Like this.';
@@ -222,9 +221,9 @@ $sql = "SELECT *"
     . "WHERE `id` = 121 ";
 ```
 
-### 5.3 arrays
+### 5.3 数组
 
-For arrays we're using PHP 5.4 short array syntax.
+数组使用短语法 [] 而不是 array().
 
 #### Numerically indexed
 
@@ -236,7 +235,7 @@ Use the following formatting when declaring array:
 $arr = [3, 14, 15, 'Yii', 'Framework'];
 ```
 
-If there are too many elements for a single line:
+数组内元素太多时主动换行:
 
 ```php
 $arr = [
@@ -248,7 +247,7 @@ $arr = [
 
 #### Associative
 
-Use the following format for associative arrays:
+关联数组使用下面的格式:
 
 ```php
 $config = [
@@ -257,7 +256,7 @@ $config = [
 ];
 ```
 
-### 5.4 control statements
+### 5.4 控制语句
 
 - Control statement condition must have single space before and after parenthesis.
 - Operators inside of parenthesis should be separated by spaces.
@@ -487,10 +486,10 @@ Return early when conditions nesting starts to get cluttered. If the method is s
 
 ### `self` vs. `static`
 
-Always use `static` except the following cases:
+除了下面的情况总是使用`static`:
 
-- accessing constants MUST be done via `self`: `self::MY_CONSTANT`
-- accessing private static properties MUST be done via `self`: `self::$_events`
+- 访问类常量必须使用`self`: `self::MY_CONSTANT`
+- 访问私有的静态属性必须使用`self`: `self::$_events`
 - It is allowed to use `self` for method calls where it makes sense such as recursive call to current implementation instead of extending classes implementation.
 
 ### value for "don't do something"
