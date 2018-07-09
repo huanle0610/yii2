@@ -10,8 +10,8 @@ Yii 2.x核心代码和官方扩展开发使用下面的编码风格.如果你要
 ## 1. 概览
 
 总体上我们应用[PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
-兼容性风格, 应用了
-[PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) 风格的代码就对了.
+兼容性风格, 代码应用了
+[PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) 风格就对了.
 
 - 文件必须以 `<?php` 或  `<?=` 标签开头.
 - 文件最后应该要有一个空行.
