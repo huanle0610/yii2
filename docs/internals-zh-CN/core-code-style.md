@@ -29,7 +29,7 @@ Yii 2.x核心代码和官方扩展开发使用下面的编码风格.如果你要
 ### 2.1. PHP 标签
 
 - PHP code MUST use `<?php ?>` or `<?=` tags; it MUST NOT use the other tag variations such as `<?`.
-- 如果代码中只有PHP文件末尾不应该加`?>`.
+- 如果代码中只有PHP, 末尾不应该加`?>`.
 - 行尾不要加空格.
 - 包含PHP代码的文件后缀名都应该为`.php`.
 
