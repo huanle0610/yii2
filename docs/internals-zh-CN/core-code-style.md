@@ -29,13 +29,13 @@ Yii 2.x核心代码和官方扩展开发使用下面的编码风格.如果你要
 ### 2.1. PHP 标签
 
 - PHP code MUST use `<?php ?>` or `<?=` tags; it MUST NOT use the other tag variations such as `<?`.
-- In case file contains PHP only it should not have trailing `?>`.
-- Do not add trailing spaces to the end of the lines.
-- Any file that contains PHP code should end with the extension `.php`.
+- 如果代码中只有PHP文件末尾不应该加`?>`.
+- 行尾不要加空格.
+- 包含PHP代码的文件后缀名都应该为`.php`.
 
 ### 2.2. 字符编码
 
-PHP code MUST use only UTF-8 without BOM.
+PHP code MUST use only ｀UTF-8 without BOM｀.
 
 ## 3. 类名
 
@@ -45,13 +45,13 @@ Class names MUST be declared in `StudlyCaps`. For example, `Controller`, `Model`
 
 "class" 这个术语指的是所有的类和接口.
 
-- Classes should be named using `CamelCase`.
-- The brace should always be written on the line underneath the class name.
-- Every class must have a documentation block that conforms to the PHPDoc.
-- All code in a class must be indented with 4 spaces.
-- There should be only one class in a single PHP file.
-- All classes should be namespaced.
-- Class name should match file name. Class namespace should match directory structure.
+- 类应该以`CamelCase`风格命名.
+- 类名后的大括号应该在放在类名下一行.
+- 每个类都必须有符合PHPDoc规则的文档块.
+- 类中的所有代码都使用4个空格缩进.
+- 一个PHP文件中应该只有一个类.
+- 所有的类都应该使用命名空间.
+- 类名应该和文件名对应, 命名空间应该和目录结构对应.
 
 ```php
 /**
@@ -76,20 +76,17 @@ class Foo
     const DATE_APPROVED = '2012-06-01';
 }
 ```
-### 4.2. Properties
+### 4.2. 属性
 
-- When declaring public class members specify `public` keyword explicitly.
-- Public and protected variables should be declared at the top of the class before any method declarations.
-  Private variables should also be declared at the top of the class but may be added right before the methods
-  that are dealing with them in cases where they are only related to a small subset of the class methods.
-- The order of property declaration in a class should be ascending based on their visibility: from public over protected to private.
-- There are no strict rules for ordering properties that have the same visibility.
-- For better readability there should be no blank lines between property declarations and two blank lines
-  between property and method declaration sections. One blank line should be added between the different visibility groups.
-- Private variables should be named like `$_varName`.
-- Public class members and standalone variables should be named using `$camelCase`
-  with first letter lowercase.
-- Use descriptive names. Variables such as `$i` and `$j` are better not to be used.
+- 对public属性明确使用`public`关键字声明.
+- public 和 protected 变量 应该定义在类文件上部, 所有method定义之前.
+  private 变量也应该定义于类文件上部, 如果他们只和一小部分类代码相关也可以放在处理体它们的method之前.
+- 类中属性的定义顺序应该依照它们的可见行排列: 先 public 然后 protected 最后 private.
+- 同可见性级别的属性没有严格的排序标准.
+- 为了更好的代码可读性属性定义间应该无空行,属性定义部分和方法定义部分两个空行,不同可见性级别之间一个空行.
+- private变量像这样`$_varName`命名.
+- public类成员变量和独立变量应该像`$camelCase`命名,第一个字母小写.
+- 使用描述性的变量名. 如`$i` 和 `$j` 这样的变量名最后不要用.
 
 For example:
 
@@ -478,7 +475,7 @@ Additional rules
 
 ### `=== []` vs `empty()`
 
-Use `empty()` where possible.
+尽量使用`empty()`.
 
 ### multiple return points
 
@@ -496,11 +493,11 @@ Return early when conditions nesting starts to get cluttered. If the method is s
 
 Properties allowing to configure component not to do something should accept value of `false`. `null`, `''`, or `[]` should not be assumed as such.
 
-### Directory/namespace names
+### 目录/命名空间 名称
 
-- use lower case
-- use plural form for nouns which represent objects (e.g. validators)
+- 使用小写
+- 该用复数形式是用复数 (e.g. validators)
 - use singular form for names representing relevant functionality/features (e.g. web)
-- prefer single word namespaces
-- if single word isn't suitable, use camelCase
+- 最好用一个单词做命名空间
+- 一个单词不合适, 使用camelCase形式
 
